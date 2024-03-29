@@ -1,0 +1,21 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/produtos')
+def produtos():
+    # Aqui você pode consultar um banco de dados ou qualquer outra fonte de dados para obter os produtos
+    # Por simplicidade, vamos apenas criar uma lista de produtos fictícios
+    produtos = [
+        {'nome': 'Camiseta', 'descricao': 'Uma camiseta confortável', 'preco': 20.00},
+        {'nome': 'Calça Jeans', 'descricao': 'Uma calça jeans moderna', 'preco': 50.00},
+        {'nome': 'Vestido', 'descricao': 'Um vestido elegante', 'preco': 40.00}
+    ]
+    return render_template('produtos.html', produtos=produtos)
+
+if __name__ == '__main__':
+    app.run(debug=True)

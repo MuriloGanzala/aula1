@@ -1,0 +1,5 @@
+nomedoaluno= (input('Informe o seu nome:'))
+notadaprova= int(input('Informe a nota da prova:'))
+notaqualitativa= int(input('Informe a nota qualitativa:'))
+media= (notaqualitativa+(notadaprova*2)/3)
+print(f'{nomedoaluno} a sua média final é {media}')
